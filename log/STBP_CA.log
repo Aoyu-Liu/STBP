@@ -1,0 +1,457 @@
+当前进程号(PID): 2056095
+2025-05-08 21:06:44,504 - logger name:log/CA/STBP-2025-05-08_21-06-44-seed43/STBP.log
+2025-05-08 21:06:44,505 - params : {'conf': 'conf/STBP_CA.json', 'seed': 43, 'paral': 0, 'gpuid': 2, 'logname': 'STBP', 'method': 'STBP', 'load_first_year': 0, 'first_year_model_path': '', 'device': device(type='cuda', index=2), 'methods': {'STBP': <class 'src.model.model.STBP_Model'>}, 'begin_year': 0, 'end_year': 3, 'dropout': 0.0, 'lr': 0.01, 'batch_size': 64, 'epoch': 200, 'y_len': 12, 'x_len': 12, 'data_process': 1, 'raw_data_path': 'data/CA/RawData/', 'save_data_path': 'data/CA/FastData/', 'graph_path': 'data/CA/graph/', 'model_path': 'log/CA/', 'model': {'in_channel': 12, 'out_channel': 12, 'hidden_channel': 192}, 'init': True, 'train': 1, 'path': 'log/CA/STBP-2025-05-08_21-06-44-seed43', 'logger': <Logger utils.initialize (INFO)>}
+
+  0%|          | 0/5355 [00:00<?, ?it/s]
+100%|██████████| 5355/5355 [00:00<00:00, 216680.96it/s]
+
+  0%|          | 0/1785 [00:00<?, ?it/s]
+100%|██████████| 1785/1785 [00:00<00:00, 448179.15it/s]
+
+  0%|          | 0/1785 [00:00<?, ?it/s]
+100%|██████████| 1785/1785 [00:00<00:00, 464818.57it/s]
+2025-05-08 21:06:49,623 - [*] Year 0 load from data/CA/FastData/0.npz
+2025-05-08 21:06:49,858 - [*] Year 0 Dataset load!
+2025-05-08 21:06:49,868 - Total Parameters: 508600
+2025-05-08 21:06:49,868 - Trainable Parameters: 508600
+Parameter: pattern_bank | Shape: torch.Size([480, 576]) | Requires Grad: True
+Parameter: fconv1.weight_neigh.weight | Shape: torch.Size([192, 12]) | Requires Grad: True
+Parameter: fconv1.weight_neigh.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: fconv1.fre_network.complex_weight | Shape: torch.Size([1, 1, 97, 2]) | Requires Grad: True
+Parameter: fconv1.weight_self.weight | Shape: torch.Size([192, 12]) | Requires Grad: True
+Parameter: stmodule.attn.q.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: True
+Parameter: stmodule.attn.q.conv.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: stmodule.attn.k.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: True
+Parameter: stmodule.attn.k.conv.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: stmodule.attn.v.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: True
+Parameter: stmodule.attn.v.conv.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: stmodule.attn.concat.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: True
+Parameter: stmodule.attn.concat.conv.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: stmodule.FFW.fc1.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: True
+Parameter: stmodule.FFW.fc1.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: stmodule.FFW.fc2.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: True
+Parameter: stmodule.FFW.fc2.bias | Shape: torch.Size([192]) | Requires Grad: True
+Parameter: fconv2.weight_neigh.weight | Shape: torch.Size([12, 192]) | Requires Grad: True
+Parameter: fconv2.weight_neigh.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: fconv2.fre_network.complex_weight | Shape: torch.Size([1, 1, 7, 2]) | Requires Grad: True
+Parameter: fconv2.weight_self.weight | Shape: torch.Size([12, 192]) | Requires Grad: True
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: True
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: True
+2025-05-08 21:06:49,868 - [*] Year 0 Training start
+2025-05-08 21:06:50,310 - node number torch.Size([30720, 12])
+2025-05-08 21:06:54,889 - epoch:0, training loss:55.2959 validation loss:30.6630
+2025-05-08 21:06:59,223 - epoch:1, training loss:24.7556 validation loss:24.8249
+2025-05-08 21:07:03,669 - epoch:2, training loss:22.7651 validation loss:23.2158
+2025-05-08 21:07:08,202 - epoch:3, training loss:21.8115 validation loss:22.3834
+2025-05-08 21:07:12,597 - epoch:4, training loss:20.6458 validation loss:21.8346
+2025-05-08 21:07:17,271 - epoch:5, training loss:19.9937 validation loss:20.9157
+2025-05-08 21:07:21,650 - epoch:6, training loss:19.9451 validation loss:21.9734
+2025-05-08 21:07:26,232 - epoch:7, training loss:19.1404 validation loss:20.5315
+2025-05-08 21:07:30,897 - epoch:8, training loss:19.1552 validation loss:23.6346
+2025-05-08 21:07:35,451 - epoch:9, training loss:19.0519 validation loss:20.2250
+2025-05-08 21:07:40,156 - epoch:10, training loss:18.3870 validation loss:21.8663
+2025-05-08 21:07:45,226 - epoch:11, training loss:18.4434 validation loss:20.6025
+2025-05-08 21:07:49,804 - epoch:12, training loss:18.0885 validation loss:21.2194
+2025-05-08 21:07:54,940 - epoch:13, training loss:18.1846 validation loss:21.4445
+2025-05-08 21:07:59,899 - epoch:14, training loss:18.0273 validation loss:19.5625
+2025-05-08 21:08:04,861 - epoch:15, training loss:17.8830 validation loss:22.4888
+2025-05-08 21:08:09,649 - epoch:16, training loss:17.7951 validation loss:19.3318
+2025-05-08 21:08:14,532 - epoch:17, training loss:17.9655 validation loss:20.0508
+2025-05-08 21:08:19,506 - epoch:18, training loss:17.7468 validation loss:21.2031
+2025-05-08 21:08:24,205 - epoch:19, training loss:17.4149 validation loss:20.0752
+2025-05-08 21:08:28,981 - epoch:20, training loss:17.3368 validation loss:21.3135
+2025-05-08 21:08:33,949 - epoch:21, training loss:17.3202 validation loss:19.1213
+2025-05-08 21:08:38,751 - epoch:22, training loss:17.3848 validation loss:20.0969
+2025-05-08 21:08:43,632 - epoch:23, training loss:17.2401 validation loss:20.2657
+2025-05-08 21:08:48,323 - epoch:24, training loss:17.0255 validation loss:20.9724
+2025-05-08 21:08:53,039 - epoch:25, training loss:17.2674 validation loss:22.7802
+2025-05-08 21:08:57,724 - epoch:26, training loss:17.0346 validation loss:19.0683
+2025-05-08 21:09:02,446 - epoch:27, training loss:16.8510 validation loss:18.8064
+2025-05-08 21:09:07,389 - epoch:28, training loss:16.8453 validation loss:19.9047
+2025-05-08 21:09:12,270 - epoch:29, training loss:16.8640 validation loss:19.9420
+2025-05-08 21:09:17,183 - epoch:30, training loss:16.9061 validation loss:19.9286
+2025-05-08 21:09:21,793 - epoch:31, training loss:16.6465 validation loss:19.6231
+2025-05-08 21:09:26,618 - epoch:32, training loss:16.6465 validation loss:20.8026
+2025-05-08 21:09:31,260 - epoch:33, training loss:16.6690 validation loss:20.0315
+2025-05-08 21:09:35,954 - epoch:34, training loss:16.6099 validation loss:19.8944
+2025-05-08 21:09:40,771 - epoch:35, training loss:16.6519 validation loss:20.2246
+2025-05-08 21:09:45,447 - epoch:36, training loss:16.5021 validation loss:18.7508
+2025-05-08 21:09:50,329 - epoch:37, training loss:16.8167 validation loss:20.3172
+2025-05-08 21:09:55,093 - epoch:38, training loss:16.4738 validation loss:20.3241
+2025-05-08 21:09:59,915 - epoch:39, training loss:16.3707 validation loss:19.9602
+2025-05-08 21:10:04,324 - epoch:40, training loss:16.2858 validation loss:19.2960
+2025-05-08 21:10:09,024 - epoch:41, training loss:16.1685 validation loss:19.3119
+2025-05-08 21:10:14,112 - epoch:42, training loss:16.3749 validation loss:23.1979
+2025-05-08 21:10:18,911 - epoch:43, training loss:16.7118 validation loss:19.8520
+2025-05-08 21:10:23,834 - epoch:44, training loss:16.1808 validation loss:21.1153
+2025-05-08 21:10:28,569 - epoch:45, training loss:16.2103 validation loss:18.8369
+2025-05-08 21:10:33,806 - epoch:46, training loss:16.0525 validation loss:19.4203
+2025-05-08 21:10:38,806 - epoch:47, training loss:16.1979 validation loss:19.3595
+2025-05-08 21:10:43,614 - epoch:48, training loss:16.1951 validation loss:19.4427
+2025-05-08 21:10:48,330 - epoch:49, training loss:16.0237 validation loss:18.8071
+2025-05-08 21:10:52,986 - epoch:50, training loss:16.0193 validation loss:20.2109
+2025-05-08 21:10:57,998 - epoch:51, training loss:15.8396 validation loss:19.0032
+2025-05-08 21:11:02,854 - epoch:52, training loss:15.8871 validation loss:19.7946
+2025-05-08 21:11:07,486 - epoch:53, training loss:15.8279 validation loss:19.5372
+2025-05-08 21:11:12,312 - epoch:54, training loss:15.8214 validation loss:18.5819
+2025-05-08 21:11:17,149 - epoch:55, training loss:15.9568 validation loss:18.6820
+2025-05-08 21:11:22,020 - epoch:56, training loss:15.7532 validation loss:19.9646
+2025-05-08 21:11:26,818 - epoch:57, training loss:15.7814 validation loss:19.7731
+2025-05-08 21:11:31,602 - epoch:58, training loss:15.8431 validation loss:18.3889
+2025-05-08 21:11:36,464 - epoch:59, training loss:15.7087 validation loss:19.1900
+2025-05-08 21:11:41,297 - epoch:60, training loss:15.9116 validation loss:19.3467
+2025-05-08 21:11:46,717 - epoch:61, training loss:15.6919 validation loss:18.7968
+2025-05-08 21:11:51,451 - epoch:62, training loss:15.6207 validation loss:19.4199
+2025-05-08 21:11:56,044 - epoch:63, training loss:15.5599 validation loss:18.1859
+2025-05-08 21:12:00,855 - epoch:64, training loss:15.5533 validation loss:19.1478
+2025-05-08 21:12:05,464 - epoch:65, training loss:15.5835 validation loss:18.9947
+2025-05-08 21:12:10,291 - epoch:66, training loss:15.5160 validation loss:19.2423
+2025-05-08 21:12:15,047 - epoch:67, training loss:15.6638 validation loss:19.3824
+2025-05-08 21:12:19,787 - epoch:68, training loss:15.4971 validation loss:19.2089
+2025-05-08 21:12:24,567 - epoch:69, training loss:15.4681 validation loss:18.7625
+2025-05-08 21:12:29,252 - epoch:70, training loss:15.7706 validation loss:19.2141
+2025-05-08 21:12:34,370 - epoch:71, training loss:15.5578 validation loss:19.3036
+2025-05-08 21:12:39,173 - epoch:72, training loss:15.4709 validation loss:18.9507
+2025-05-08 21:12:43,899 - epoch:73, training loss:15.4118 validation loss:18.7602
+2025-05-08 21:12:48,435 - epoch:74, training loss:15.5192 validation loss:18.6858
+2025-05-08 21:12:53,150 - epoch:75, training loss:15.5249 validation loss:19.3431
+2025-05-08 21:12:57,871 - epoch:76, training loss:15.3649 validation loss:18.8412
+2025-05-08 21:13:02,779 - epoch:77, training loss:15.2398 validation loss:18.5219
+2025-05-08 21:13:07,664 - epoch:78, training loss:15.3796 validation loss:18.4328
+2025-05-08 21:13:12,375 - epoch:79, training loss:15.2618 validation loss:20.3127
+2025-05-08 21:13:17,103 - epoch:80, training loss:15.4416 validation loss:19.2288
+2025-05-08 21:13:22,012 - epoch:81, training loss:15.2651 validation loss:19.5147
+2025-05-08 21:13:26,771 - epoch:82, training loss:15.2625 validation loss:19.5523
+2025-05-08 21:13:31,328 - epoch:83, training loss:15.2705 validation loss:18.7868
+2025-05-08 21:13:36,284 - epoch:84, training loss:15.2990 validation loss:19.0114
+2025-05-08 21:13:41,190 - epoch:85, training loss:15.4760 validation loss:19.6241
+2025-05-08 21:13:45,822 - epoch:86, training loss:15.2209 validation loss:19.0434
+2025-05-08 21:13:50,739 - epoch:87, training loss:15.2579 validation loss:18.9850
+2025-05-08 21:13:55,408 - epoch:88, training loss:15.1443 validation loss:18.7779
+2025-05-08 21:14:00,102 - epoch:89, training loss:15.2402 validation loss:18.5356
+2025-05-08 21:14:04,922 - epoch:90, training loss:15.3143 validation loss:18.7917
+2025-05-08 21:14:09,625 - epoch:91, training loss:15.0976 validation loss:18.2731
+2025-05-08 21:14:14,386 - epoch:92, training loss:15.3380 validation loss:18.9450
+2025-05-08 21:14:19,285 - epoch:93, training loss:15.0510 validation loss:19.3945
+2025-05-08 21:14:24,178 - epoch:94, training loss:15.1308 validation loss:18.5495
+2025-05-08 21:14:25,500 - [*] loss:17.5952
+2025-05-08 21:14:25,537 - [*] year 0, testing
+2025-05-08 21:14:25,927 - T:3	MAE	16.2492	RMSE	26.6335	MAPE	14.1089
+2025-05-08 21:14:26,692 - T:6	MAE	16.8194	RMSE	27.7036	MAPE	14.6203
+2025-05-08 21:14:29,156 - T:12	MAE	17.6628	RMSE	29.1685	MAPE	15.4194
+2025-05-08 21:14:29,156 - T:Avg	MAE	16.8172	RMSE	27.6642	MAPE	14.6256
+2025-05-08 21:14:29,157 - Finished optimization, total time:349.96 s, best model:log/CA/STBP-2025-05-08_21-06-44-seed43/0/18.1859.pkl
+
+  0%|          | 0/4837 [00:00<?, ?it/s]
+100%|██████████| 4837/4837 [00:00<00:00, 391083.52it/s]
+
+  0%|          | 0/1612 [00:00<?, ?it/s]
+100%|██████████| 1612/1612 [00:00<00:00, 421443.50it/s]
+
+  0%|          | 0/1612 [00:00<?, ?it/s]
+100%|██████████| 1612/1612 [00:00<00:00, 468033.92it/s]
+2025-05-08 21:14:34,355 - [*] Year 1 load from data/CA/FastData/1.npz
+2025-05-08 21:14:34,375 - [*] Year 1 Dataset load!
+2025-05-08 21:14:34,375 - [*] load from log/CA/STBP-2025-05-08_21-06-44-seed43/0/18.1859.pkl
+2025-05-08 21:14:34,399 - Total Parameters: 630136
+2025-05-08 21:14:34,399 - Trainable Parameters: 398016
+Parameter: pattern_bank | Shape: torch.Size([691, 576]) | Requires Grad: True
+Parameter: fconv1.weight_neigh.weight | Shape: torch.Size([192, 12]) | Requires Grad: False
+Parameter: fconv1.weight_neigh.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: fconv1.fre_network.complex_weight | Shape: torch.Size([1, 1, 97, 2]) | Requires Grad: False
+Parameter: fconv1.weight_self.weight | Shape: torch.Size([192, 12]) | Requires Grad: False
+Parameter: stmodule.attn.q.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.q.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.k.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.k.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.v.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.v.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.concat.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.concat.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.FFW.fc1.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.FFW.fc1.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.FFW.fc2.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.FFW.fc2.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: fconv2.weight_neigh.weight | Shape: torch.Size([12, 192]) | Requires Grad: False
+Parameter: fconv2.weight_neigh.bias | Shape: torch.Size([12]) | Requires Grad: False
+Parameter: fconv2.fre_network.complex_weight | Shape: torch.Size([1, 1, 7, 2]) | Requires Grad: False
+Parameter: fconv2.weight_self.weight | Shape: torch.Size([12, 192]) | Requires Grad: False
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: False
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: False
+2025-05-08 21:14:34,400 - [*] Year 1 Training start
+2025-05-08 21:14:35,157 - node number torch.Size([44224, 12])
+2025-05-08 21:14:39,016 - epoch:0, training loss:17.0073 validation loss:17.2093
+2025-05-08 21:14:43,428 - epoch:1, training loss:14.9366 validation loss:16.8697
+2025-05-08 21:14:47,695 - epoch:2, training loss:14.6809 validation loss:16.7791
+2025-05-08 21:14:51,829 - epoch:3, training loss:14.4903 validation loss:16.5806
+2025-05-08 21:14:55,981 - epoch:4, training loss:14.3942 validation loss:16.7665
+2025-05-08 21:15:00,169 - epoch:5, training loss:14.3233 validation loss:16.8140
+2025-05-08 21:15:04,321 - epoch:6, training loss:14.2811 validation loss:16.6589
+2025-05-08 21:15:08,691 - epoch:7, training loss:14.2431 validation loss:16.4716
+2025-05-08 21:15:12,886 - epoch:8, training loss:14.2252 validation loss:16.3975
+2025-05-08 21:15:17,278 - epoch:9, training loss:14.1617 validation loss:16.5966
+2025-05-08 21:15:21,458 - epoch:10, training loss:14.1209 validation loss:16.6613
+2025-05-08 21:15:25,555 - epoch:11, training loss:14.1150 validation loss:16.3773
+2025-05-08 21:15:29,831 - epoch:12, training loss:14.0962 validation loss:16.5171
+2025-05-08 21:15:33,956 - epoch:13, training loss:14.0790 validation loss:16.4219
+2025-05-08 21:15:38,046 - epoch:14, training loss:14.0480 validation loss:16.5829
+2025-05-08 21:15:42,171 - epoch:15, training loss:14.0577 validation loss:16.4622
+2025-05-08 21:15:46,450 - epoch:16, training loss:14.0027 validation loss:16.7751
+2025-05-08 21:15:50,602 - epoch:17, training loss:13.9997 validation loss:16.3820
+2025-05-08 21:15:54,862 - epoch:18, training loss:13.9656 validation loss:16.4633
+2025-05-08 21:15:59,070 - epoch:19, training loss:13.9324 validation loss:16.4135
+2025-05-08 21:16:03,401 - epoch:20, training loss:13.9632 validation loss:16.2850
+2025-05-08 21:16:07,677 - epoch:21, training loss:13.9449 validation loss:16.3272
+2025-05-08 21:16:12,112 - epoch:22, training loss:13.9354 validation loss:16.3622
+2025-05-08 21:16:16,296 - epoch:23, training loss:13.9577 validation loss:16.3456
+2025-05-08 21:16:20,778 - epoch:24, training loss:13.9301 validation loss:16.3119
+2025-05-08 21:16:24,924 - epoch:25, training loss:13.9302 validation loss:16.3785
+2025-05-08 21:16:29,582 - epoch:26, training loss:13.9235 validation loss:16.3381
+2025-05-08 21:16:33,996 - epoch:27, training loss:13.8849 validation loss:16.5553
+2025-05-08 21:16:38,566 - epoch:28, training loss:13.8845 validation loss:16.2286
+2025-05-08 21:16:43,176 - epoch:29, training loss:13.8665 validation loss:16.6404
+2025-05-08 21:16:47,810 - epoch:30, training loss:13.9234 validation loss:16.1911
+2025-05-08 21:16:52,046 - epoch:31, training loss:13.8795 validation loss:16.4380
+2025-05-08 21:16:56,476 - epoch:32, training loss:13.8678 validation loss:16.3848
+2025-05-08 21:17:00,974 - epoch:33, training loss:13.8663 validation loss:16.5818
+2025-05-08 21:17:05,323 - epoch:34, training loss:13.8537 validation loss:16.3649
+2025-05-08 21:17:09,946 - epoch:35, training loss:13.8609 validation loss:16.4539
+2025-05-08 21:17:14,398 - epoch:36, training loss:13.8561 validation loss:16.3912
+2025-05-08 21:17:18,939 - epoch:37, training loss:13.8314 validation loss:16.2411
+2025-05-08 21:17:23,080 - epoch:38, training loss:13.8175 validation loss:16.4378
+2025-05-08 21:17:27,433 - epoch:39, training loss:13.8371 validation loss:16.5282
+2025-05-08 21:17:31,887 - epoch:40, training loss:13.8388 validation loss:16.4884
+2025-05-08 21:17:36,480 - epoch:41, training loss:13.8154 validation loss:16.4997
+2025-05-08 21:17:40,957 - epoch:42, training loss:13.7954 validation loss:16.5798
+2025-05-08 21:17:45,519 - epoch:43, training loss:13.7861 validation loss:16.4631
+2025-05-08 21:17:49,992 - epoch:44, training loss:13.7817 validation loss:16.3896
+2025-05-08 21:17:54,366 - epoch:45, training loss:13.7815 validation loss:16.2886
+2025-05-08 21:17:58,794 - epoch:46, training loss:13.8001 validation loss:16.4297
+2025-05-08 21:18:03,370 - epoch:47, training loss:13.8091 validation loss:16.5194
+2025-05-08 21:18:07,954 - epoch:48, training loss:13.8057 validation loss:16.4158
+2025-05-08 21:18:12,422 - epoch:49, training loss:13.7688 validation loss:16.3298
+2025-05-08 21:18:16,993 - epoch:50, training loss:13.8108 validation loss:16.4362
+2025-05-08 21:18:21,767 - epoch:51, training loss:13.8015 validation loss:16.3219
+2025-05-08 21:18:26,228 - epoch:52, training loss:13.7909 validation loss:16.3700
+2025-05-08 21:18:30,522 - epoch:53, training loss:13.7766 validation loss:16.4079
+2025-05-08 21:18:34,890 - epoch:54, training loss:13.7910 validation loss:16.4492
+2025-05-08 21:18:39,346 - epoch:55, training loss:13.7650 validation loss:16.5051
+2025-05-08 21:18:43,644 - epoch:56, training loss:13.7731 validation loss:16.3872
+2025-05-08 21:18:48,044 - epoch:57, training loss:13.7967 validation loss:16.3897
+2025-05-08 21:18:52,407 - epoch:58, training loss:13.7699 validation loss:16.3320
+2025-05-08 21:18:56,917 - epoch:59, training loss:13.7585 validation loss:16.5372
+2025-05-08 21:19:01,439 - epoch:60, training loss:13.7683 validation loss:16.4315
+2025-05-08 21:19:05,954 - epoch:61, training loss:13.7716 validation loss:16.3879
+2025-05-08 21:19:07,364 - [*] loss:15.8031
+2025-05-08 21:19:07,417 - [*] year 1, testing
+2025-05-08 21:19:07,865 - T:3	MAE	14.4130	RMSE	24.1401	MAPE	13.8982
+2025-05-08 21:19:08,938 - T:6	MAE	15.0376	RMSE	25.2196	MAPE	14.3530
+2025-05-08 21:19:12,372 - T:12	MAE	15.8431	RMSE	26.5402	MAPE	14.9929
+2025-05-08 21:19:12,373 - T:Avg	MAE	15.0052	RMSE	25.1460	MAPE	14.3414
+2025-05-08 21:19:12,374 - Finished optimization, total time:194.89 s, best model:log/CA/STBP-2025-05-08_21-06-44-seed43/1/16.1911.pkl
+
+  0%|          | 0/5355 [00:00<?, ?it/s]
+100%|██████████| 5355/5355 [00:00<00:00, 384927.13it/s]
+
+  0%|          | 0/1785 [00:00<?, ?it/s]
+100%|██████████| 1785/1785 [00:00<00:00, 477233.09it/s]
+
+  0%|          | 0/1785 [00:00<?, ?it/s]
+100%|██████████| 1785/1785 [00:00<00:00, 461381.19it/s]
+2025-05-08 21:19:24,044 - [*] Year 2 load from data/CA/FastData/2.npz
+2025-05-08 21:19:24,072 - [*] Year 2 Dataset load!
+2025-05-08 21:19:24,072 - [*] load from log/CA/STBP-2025-05-08_21-06-44-seed43/1/16.1911.pkl
+2025-05-08 21:19:24,104 - Total Parameters: 908920
+2025-05-08 21:19:24,104 - Trainable Parameters: 676800
+Parameter: pattern_bank | Shape: torch.Size([1175, 576]) | Requires Grad: True
+Parameter: fconv1.weight_neigh.weight | Shape: torch.Size([192, 12]) | Requires Grad: False
+Parameter: fconv1.weight_neigh.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: fconv1.fre_network.complex_weight | Shape: torch.Size([1, 1, 97, 2]) | Requires Grad: False
+Parameter: fconv1.weight_self.weight | Shape: torch.Size([192, 12]) | Requires Grad: False
+Parameter: stmodule.attn.q.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.q.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.k.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.k.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.v.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.v.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.concat.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.concat.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.FFW.fc1.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.FFW.fc1.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.FFW.fc2.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.FFW.fc2.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: fconv2.weight_neigh.weight | Shape: torch.Size([12, 192]) | Requires Grad: False
+Parameter: fconv2.weight_neigh.bias | Shape: torch.Size([12]) | Requires Grad: False
+Parameter: fconv2.fre_network.complex_weight | Shape: torch.Size([1, 1, 7, 2]) | Requires Grad: False
+Parameter: fconv2.weight_self.weight | Shape: torch.Size([12, 192]) | Requires Grad: False
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: False
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: False
+2025-05-08 21:19:24,105 - [*] Year 2 Training start
+2025-05-08 21:19:24,760 - node number torch.Size([75200, 12])
+2025-05-08 21:19:31,193 - epoch:0, training loss:16.5746 validation loss:16.6420
+2025-05-08 21:19:37,977 - epoch:1, training loss:14.9687 validation loss:16.2455
+2025-05-08 21:19:44,868 - epoch:2, training loss:14.6941 validation loss:16.4104
+2025-05-08 21:19:51,981 - epoch:3, training loss:14.5356 validation loss:15.8635
+2025-05-08 21:19:59,310 - epoch:4, training loss:14.4229 validation loss:15.7786
+2025-05-08 21:20:06,478 - epoch:5, training loss:14.3586 validation loss:15.9430
+2025-05-08 21:20:13,345 - epoch:6, training loss:14.2943 validation loss:15.6282
+2025-05-08 21:20:20,400 - epoch:7, training loss:14.2649 validation loss:15.7001
+2025-05-08 21:20:27,388 - epoch:8, training loss:14.2394 validation loss:15.9972
+2025-05-08 21:20:34,483 - epoch:9, training loss:14.2204 validation loss:16.4194
+2025-05-08 21:20:41,766 - epoch:10, training loss:14.1872 validation loss:15.9598
+2025-05-08 21:20:48,756 - epoch:11, training loss:14.1539 validation loss:15.3469
+2025-05-08 21:20:55,815 - epoch:12, training loss:14.1368 validation loss:15.6763
+2025-05-08 21:21:02,889 - epoch:13, training loss:14.1351 validation loss:15.8023
+2025-05-08 21:21:10,042 - epoch:14, training loss:14.0723 validation loss:15.6519
+2025-05-08 21:21:16,999 - epoch:15, training loss:14.1045 validation loss:15.5629
+2025-05-08 21:21:23,983 - epoch:16, training loss:14.0775 validation loss:15.9711
+2025-05-08 21:21:30,959 - epoch:17, training loss:14.0828 validation loss:15.6600
+2025-05-08 21:21:37,859 - epoch:18, training loss:14.0597 validation loss:15.6582
+2025-05-08 21:21:44,602 - epoch:19, training loss:14.0705 validation loss:15.6889
+2025-05-08 21:21:51,635 - epoch:20, training loss:14.0505 validation loss:15.7835
+2025-05-08 21:21:58,682 - epoch:21, training loss:14.0484 validation loss:15.6407
+2025-05-08 21:22:05,462 - epoch:22, training loss:14.0438 validation loss:15.7834
+2025-05-08 21:22:12,315 - epoch:23, training loss:14.0222 validation loss:15.8734
+2025-05-08 21:22:19,148 - epoch:24, training loss:14.0085 validation loss:15.9447
+2025-05-08 21:22:25,930 - epoch:25, training loss:14.0038 validation loss:15.4366
+2025-05-08 21:22:32,803 - epoch:26, training loss:13.9973 validation loss:15.7039
+2025-05-08 21:22:39,778 - epoch:27, training loss:14.0045 validation loss:15.5512
+2025-05-08 21:22:46,589 - epoch:28, training loss:13.9948 validation loss:15.9278
+2025-05-08 21:22:53,417 - epoch:29, training loss:13.9906 validation loss:15.6468
+2025-05-08 21:23:00,448 - epoch:30, training loss:13.9751 validation loss:15.6858
+2025-05-08 21:23:07,576 - epoch:31, training loss:13.9701 validation loss:15.5611
+2025-05-08 21:23:14,791 - epoch:32, training loss:13.9739 validation loss:15.9978
+2025-05-08 21:23:21,887 - epoch:33, training loss:13.9813 validation loss:15.4170
+2025-05-08 21:23:28,908 - epoch:34, training loss:13.9736 validation loss:15.7449
+2025-05-08 21:23:36,024 - epoch:35, training loss:13.9597 validation loss:15.4674
+2025-05-08 21:23:42,483 - epoch:36, training loss:13.9391 validation loss:15.4475
+2025-05-08 21:23:48,704 - epoch:37, training loss:13.9392 validation loss:15.6515
+2025-05-08 21:23:55,039 - epoch:38, training loss:13.9584 validation loss:15.7155
+2025-05-08 21:24:01,337 - epoch:39, training loss:13.9404 validation loss:15.3797
+2025-05-08 21:24:07,802 - epoch:40, training loss:13.9429 validation loss:15.8940
+2025-05-08 21:24:14,248 - epoch:41, training loss:13.9388 validation loss:15.6111
+2025-05-08 21:24:20,467 - epoch:42, training loss:13.9354 validation loss:15.9295
+2025-05-08 21:24:22,065 - [*] loss:14.4172
+2025-05-08 21:24:22,177 - [*] year 2, testing
+2025-05-08 21:24:23,073 - T:3	MAE	13.5690	RMSE	21.7721	MAPE	13.4525
+2025-05-08 21:24:24,838 - T:6	MAE	13.9764	RMSE	22.4835	MAPE	13.8172
+2025-05-08 21:24:30,621 - T:12	MAE	14.4913	RMSE	23.3597	MAPE	14.3649
+2025-05-08 21:24:30,622 - T:Avg	MAE	13.9510	RMSE	22.4315	MAPE	13.8183
+2025-05-08 21:24:30,623 - Finished optimization, total time:224.10 s, best model:log/CA/STBP-2025-05-08_21-06-44-seed43/2/15.3469.pkl
+
+  0%|          | 0/5183 [00:00<?, ?it/s]
+100%|██████████| 5183/5183 [00:00<00:00, 398999.30it/s]
+
+  0%|          | 0/1727 [00:00<?, ?it/s]
+100%|██████████| 1727/1727 [00:00<00:00, 473497.39it/s]
+
+  0%|          | 0/1727 [00:00<?, ?it/s]
+100%|██████████| 1727/1727 [00:00<00:00, 472632.32it/s]
+2025-05-08 21:24:45,773 - [*] Year 3 load from data/CA/FastData/3.npz
+2025-05-08 21:24:45,814 - [*] Year 3 Dataset load!
+2025-05-08 21:24:45,814 - [*] load from log/CA/STBP-2025-05-08_21-06-44-seed43/2/15.3469.pkl
+2025-05-08 21:24:45,863 - Total Parameters: 1210168
+2025-05-08 21:24:45,864 - Trainable Parameters: 978048
+Parameter: pattern_bank | Shape: torch.Size([1698, 576]) | Requires Grad: True
+Parameter: fconv1.weight_neigh.weight | Shape: torch.Size([192, 12]) | Requires Grad: False
+Parameter: fconv1.weight_neigh.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: fconv1.fre_network.complex_weight | Shape: torch.Size([1, 1, 97, 2]) | Requires Grad: False
+Parameter: fconv1.weight_self.weight | Shape: torch.Size([192, 12]) | Requires Grad: False
+Parameter: stmodule.attn.q.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.q.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.k.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.k.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.v.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.v.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.attn.concat.conv.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.attn.concat.conv.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.FFW.fc1.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.FFW.fc1.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: stmodule.FFW.fc2.weight | Shape: torch.Size([192, 192, 1, 1]) | Requires Grad: False
+Parameter: stmodule.FFW.fc2.bias | Shape: torch.Size([192]) | Requires Grad: False
+Parameter: fconv2.weight_neigh.weight | Shape: torch.Size([12, 192]) | Requires Grad: False
+Parameter: fconv2.weight_neigh.bias | Shape: torch.Size([12]) | Requires Grad: False
+Parameter: fconv2.fre_network.complex_weight | Shape: torch.Size([1, 1, 7, 2]) | Requires Grad: False
+Parameter: fconv2.weight_self.weight | Shape: torch.Size([12, 192]) | Requires Grad: False
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: False
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: False
+2025-05-08 21:24:45,864 - [*] Year 3 Training start
+2025-05-08 21:24:46,607 - node number torch.Size([108672, 12])
+2025-05-08 21:24:54,422 - epoch:0, training loss:16.1646 validation loss:15.6705
+2025-05-08 21:25:02,472 - epoch:1, training loss:14.5340 validation loss:15.2426
+2025-05-08 21:25:10,941 - epoch:2, training loss:14.2904 validation loss:15.0824
+2025-05-08 21:25:19,325 - epoch:3, training loss:14.1786 validation loss:14.9804
+2025-05-08 21:25:27,620 - epoch:4, training loss:14.0976 validation loss:14.9297
+2025-05-08 21:25:36,593 - epoch:5, training loss:14.0483 validation loss:14.8650
+2025-05-08 21:25:45,651 - epoch:6, training loss:14.0054 validation loss:14.8164
+2025-05-08 21:25:54,919 - epoch:7, training loss:13.9771 validation loss:14.8548
+2025-05-08 21:26:03,755 - epoch:8, training loss:13.9369 validation loss:14.8705
+2025-05-08 21:26:12,781 - epoch:9, training loss:13.9050 validation loss:14.7910
+2025-05-08 21:26:22,216 - epoch:10, training loss:13.8870 validation loss:14.8389
+2025-05-08 21:26:31,754 - epoch:11, training loss:13.8736 validation loss:14.8006
+2025-05-08 21:26:41,252 - epoch:12, training loss:13.8627 validation loss:14.8380
+2025-05-08 21:26:50,271 - epoch:13, training loss:13.8476 validation loss:14.8357
+2025-05-08 21:26:59,703 - epoch:14, training loss:13.8251 validation loss:14.7915
+2025-05-08 21:27:09,243 - epoch:15, training loss:13.8142 validation loss:14.7906
+2025-05-08 21:27:18,594 - epoch:16, training loss:13.8061 validation loss:14.7777
+2025-05-08 21:27:27,738 - epoch:17, training loss:13.7988 validation loss:14.7664
+2025-05-08 21:27:37,106 - epoch:18, training loss:13.7954 validation loss:14.7612
+2025-05-08 21:27:46,363 - epoch:19, training loss:13.7787 validation loss:14.7338
+2025-05-08 21:27:55,605 - epoch:20, training loss:13.7714 validation loss:14.7750
+2025-05-08 21:28:04,913 - epoch:21, training loss:13.7615 validation loss:14.7442
+2025-05-08 21:28:14,001 - epoch:22, training loss:13.7531 validation loss:14.7683
+2025-05-08 21:28:23,271 - epoch:23, training loss:13.7416 validation loss:14.7633
+2025-05-08 21:28:32,668 - epoch:24, training loss:13.7370 validation loss:14.7819
+2025-05-08 21:28:42,109 - epoch:25, training loss:13.7521 validation loss:14.7919
+2025-05-08 21:28:51,284 - epoch:26, training loss:13.7364 validation loss:14.7690
+2025-05-08 21:29:01,269 - epoch:27, training loss:13.7265 validation loss:14.7512
+2025-05-08 21:29:10,713 - epoch:28, training loss:13.7147 validation loss:14.7576
+2025-05-08 21:29:20,127 - epoch:29, training loss:13.7098 validation loss:14.7589
+2025-05-08 21:29:29,243 - epoch:30, training loss:13.7188 validation loss:14.8266
+2025-05-08 21:29:38,470 - epoch:31, training loss:13.7075 validation loss:14.7987
+2025-05-08 21:29:47,860 - epoch:32, training loss:13.7020 validation loss:14.7753
+2025-05-08 21:29:56,933 - epoch:33, training loss:13.6958 validation loss:14.7855
+2025-05-08 21:30:05,859 - epoch:34, training loss:13.6880 validation loss:14.7961
+2025-05-08 21:30:15,138 - epoch:35, training loss:13.6863 validation loss:14.7947
+2025-05-08 21:30:24,428 - epoch:36, training loss:13.6841 validation loss:14.7989
+2025-05-08 21:30:33,826 - epoch:37, training loss:13.6772 validation loss:14.8180
+2025-05-08 21:30:43,069 - epoch:38, training loss:13.6766 validation loss:14.7979
+2025-05-08 21:30:52,432 - epoch:39, training loss:13.6747 validation loss:14.7775
+2025-05-08 21:31:02,102 - epoch:40, training loss:13.6742 validation loss:14.8398
+2025-05-08 21:31:11,256 - epoch:41, training loss:13.6755 validation loss:14.8335
+2025-05-08 21:31:20,593 - epoch:42, training loss:13.6629 validation loss:14.8378
+2025-05-08 21:31:29,689 - epoch:43, training loss:13.6590 validation loss:14.8369
+2025-05-08 21:31:38,948 - epoch:44, training loss:13.6571 validation loss:14.8074
+2025-05-08 21:31:48,082 - epoch:45, training loss:13.6532 validation loss:14.8267
+2025-05-08 21:31:57,606 - epoch:46, training loss:13.6541 validation loss:14.8495
+2025-05-08 21:32:07,159 - epoch:47, training loss:13.6517 validation loss:14.8494
+2025-05-08 21:32:16,538 - epoch:48, training loss:13.6639 validation loss:14.8606
+2025-05-08 21:32:26,010 - epoch:49, training loss:13.6425 validation loss:14.8426
+2025-05-08 21:32:35,122 - epoch:50, training loss:13.6548 validation loss:14.8770
+2025-05-08 21:32:37,250 - [*] loss:14.5760
+2025-05-08 21:32:37,394 - [*] year 3, testing
+2025-05-08 21:32:38,844 - T:3	MAE	13.6222	RMSE	21.0891	MAPE	13.9497
+2025-05-08 21:32:41,648 - T:6	MAE	14.0535	RMSE	21.8597	MAPE	14.3177
+2025-05-08 21:32:50,332 - T:12	MAE	14.6979	RMSE	22.9356	MAPE	14.8741
+2025-05-08 21:32:50,332 - T:Avg	MAE	14.0699	RMSE	21.8611	MAPE	14.3328
+2025-05-08 21:32:50,334 - Finished optimization, total time:360.53 s, best model:log/CA/STBP-2025-05-08_21-06-44-seed43/3/14.7338.pkl
+2025-05-08 21:32:50,335 - 
+
+
+2025-05-08 21:32:50,336 - 3   	 MAE	     16.25	     14.41	     13.57	     13.62		   14.46
+2025-05-08 21:32:50,336 - 3   	RMSE	     26.63	     24.14	     21.77	     21.09		   23.41
+2025-05-08 21:32:50,336 - 3   	MAPE	     14.11	     13.90	     13.45	     13.95		   13.85
+2025-05-08 21:32:50,337 - 6   	 MAE	     16.82	     15.04	     13.98	     14.05		   14.97
+2025-05-08 21:32:50,337 - 6   	RMSE	     27.70	     25.22	     22.48	     21.86		   24.32
+2025-05-08 21:32:50,337 - 6   	MAPE	     14.62	     14.35	     13.82	     14.32		   14.28
+2025-05-08 21:32:50,338 - 12  	 MAE	     17.66	     15.84	     14.49	     14.70		   15.67
+2025-05-08 21:32:50,338 - 12  	RMSE	     29.17	     26.54	     23.36	     22.94		   25.50
+2025-05-08 21:32:50,338 - 12  	MAPE	     15.42	     14.99	     14.36	     14.87		   14.91
+2025-05-08 21:32:50,338 - Avg 	 MAE	     16.82	     15.01	     13.95	     14.07		   14.96
+2025-05-08 21:32:50,339 - Avg 	RMSE	     27.66	     25.15	     22.43	     21.86		   24.28
+2025-05-08 21:32:50,339 - Avg 	MAPE	     14.63	     14.34	     13.82	     14.33		   14.28
+2025-05-08 21:32:50,339 - year	0   	total_time	  349.9563	average_time	    3.6838	epoch	95
+2025-05-08 21:32:50,339 - year	1   	total_time	  194.8928	average_time	    3.1435	epoch	62
+2025-05-08 21:32:50,340 - year	2   	total_time	  224.1023	average_time	    5.2117	epoch	43
+2025-05-08 21:32:50,340 - year	3   	total_time	  360.5266	average_time	    7.0692	epoch	51
+2025-05-08 21:32:50,340 - total time: 1129.4781

@@ -1,0 +1,704 @@
+2025-04-16 09:19:57,973 - logger name:log/AIR/retrain_st_air-2025-04-16_09-19-57-seed46/retrain_st_air.log
+2025-04-16 09:19:57,973 - params : {'conf': 'conf/AIR/retrain_st_air.json', 'seed': 46, 'paral': 0, 'gpuid': 0, 'logname': 'retrain_st_air', 'method': 'STAEformer', 'load_first_year': 0, 'first_year_model_path': 'log/PEMS/trafficstream-42/2011/16.6936.pkl', 'device': device(type='cuda', index=0), 'methods': {'PatchTST': <class 'src.model.PatchTST.PatchTST'>, 'itransformer': <class 'src.model.model.itransformer'>, 'GWN': <class 'src.model.model.GraphWaveNet'>, 'STAEformer': <class 'src.model.model.STAEformer'>, 'STID': <class 'src.model.model.STID'>, 'TrafficStream': <class 'src.model.model.TrafficStream_Model'>, 'STKEC': <class 'src.model.model.STKEC_Model'>, 'EAC': <class 'src.model.model.EAC_Model'>, 'Universal': <class 'src.model.model.Universal_Model'>, 'FSTM': <class 'src.model.model.FSTM_Model'>}, 'begin_year': 2016, 'end_year': 2019, 'dropout': 0.0, 'lr': 0.03, 'batch_size': 4, 'epoch': 200, 'loss': 'mse', 'activation': 'relu', 'scheduler': 'epo', 'y_len': 12, 'x_len': 12, 'data_process': 0, 'raw_data_path': 'data/AIR/RawData/', 'save_data_path': 'data/AIR/FastData/', 'graph_path': 'data/AIR/graph/', 'model_path': 'log/AIR/', 'gcn': {'in_channel': 12, 'out_channel': 12, 'hidden_channel': 64}, 'tcn': {'in_channel': 1, 'out_channel': 1, 'kernel_size': 3, 'dilation': 1}, 'init': False, 'train': 1, 'auto_test': 0, 'strategy': 'retrain', 'detect': False, 'ewc': False, 'replay': False, 'path': 'log/AIR/retrain_st_air-2025-04-16_09-19-57-seed46', 'logger': <Logger utils.initialize (INFO)>}
+2025-04-16 09:19:58,034 - [*] Year 2016 load from data/AIR/FastData/2016.npz
+2025-04-16 09:20:06,751 - [*] Year 2016 Dataset load!
+2025-04-16 09:20:06,802 - Total Parameters: 316944
+2025-04-16 09:20:06,802 - Trainable Parameters: 316944
+Parameter: adaptive_embedding | Shape: torch.Size([12, 1087, 20]) | Requires Grad: True
+Parameter: input_proj.weight | Shape: torch.Size([12, 1]) | Requires Grad: True
+Parameter: input_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: output_proj.weight | Shape: torch.Size([12, 384]) | Requires Grad: True
+Parameter: output_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: True
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: True
+2025-04-16 09:20:06,803 - [*] Year 2016 Training start
+2025-04-16 09:20:07,143 - node number torch.Size([4348, 12])
+2025-04-16 09:24:10,505 - epoch:0, training loss:2429.7176 validation loss:26.5343
+2025-04-16 09:28:14,335 - epoch:1, training loss:1597.2575 validation loss:21.1408
+2025-04-16 09:32:18,921 - epoch:2, training loss:1440.4149 validation loss:22.4949
+2025-04-16 09:36:22,874 - epoch:3, training loss:1388.4123 validation loss:23.5107
+2025-04-16 09:40:26,579 - epoch:4, training loss:1351.0000 validation loss:21.8522
+2025-04-16 09:44:30,294 - epoch:5, training loss:1330.6754 validation loss:20.7999
+2025-04-16 09:48:32,792 - epoch:6, training loss:1323.6642 validation loss:21.0592
+2025-04-16 09:52:36,276 - epoch:7, training loss:1313.2386 validation loss:21.2547
+2025-04-16 09:56:40,293 - epoch:8, training loss:1303.0523 validation loss:20.7857
+2025-04-16 10:00:44,622 - epoch:9, training loss:1304.1853 validation loss:20.9855
+2025-04-16 10:04:48,125 - epoch:10, training loss:1299.5868 validation loss:19.3742
+2025-04-16 10:08:51,399 - epoch:11, training loss:1309.4067 validation loss:40.9528
+2025-04-16 10:12:56,504 - epoch:12, training loss:1307.3644 validation loss:20.0867
+2025-04-16 10:17:01,727 - epoch:13, training loss:1307.2948 validation loss:21.1946
+2025-04-16 10:21:05,538 - epoch:14, training loss:1304.8513 validation loss:21.8358
+2025-04-16 10:24:46,052 - epoch:15, training loss:1301.9999 validation loss:20.5761
+2025-04-16 10:28:27,617 - epoch:16, training loss:1305.7906 validation loss:22.4549
+2025-04-16 10:32:09,648 - epoch:17, training loss:1307.8656 validation loss:21.5520
+2025-04-16 10:35:50,765 - epoch:18, training loss:1303.1369 validation loss:21.4850
+2025-04-16 10:39:31,387 - epoch:19, training loss:1309.5647 validation loss:21.3799
+2025-04-16 10:43:11,063 - epoch:20, training loss:1302.0867 validation loss:21.1496
+2025-04-16 10:46:50,397 - epoch:21, training loss:1307.4790 validation loss:21.7465
+2025-04-16 10:50:29,861 - epoch:22, training loss:1306.8586 validation loss:20.0948
+2025-04-16 10:54:09,402 - epoch:23, training loss:1304.2071 validation loss:21.3788
+2025-04-16 10:57:48,820 - epoch:24, training loss:1300.1184 validation loss:20.3189
+2025-04-16 11:01:29,413 - epoch:25, training loss:1305.5303 validation loss:18.7883
+2025-04-16 11:05:12,277 - epoch:26, training loss:1302.0465 validation loss:20.9849
+2025-04-16 11:08:54,274 - epoch:27, training loss:1308.1607 validation loss:20.5405
+2025-04-16 11:12:36,213 - epoch:28, training loss:1301.8653 validation loss:20.5405
+2025-04-16 11:17:22,250 - epoch:29, training loss:1304.0421 validation loss:21.6924
+2025-04-16 11:23:23,216 - epoch:30, training loss:1306.1426 validation loss:21.4701
+2025-04-16 11:29:51,598 - epoch:31, training loss:1302.4016 validation loss:24.4762
+2025-04-16 11:36:24,494 - epoch:32, training loss:1301.8187 validation loss:21.4062
+2025-04-16 11:42:50,942 - epoch:33, training loss:1308.8894 validation loss:29.0913
+2025-04-16 11:49:22,693 - epoch:34, training loss:1305.1525 validation loss:20.1152
+2025-04-16 11:55:51,386 - epoch:35, training loss:1306.2259 validation loss:21.8952
+2025-04-16 12:02:24,234 - epoch:36, training loss:1310.8049 validation loss:32.2699
+2025-04-16 12:08:55,977 - epoch:37, training loss:1302.6212 validation loss:22.2528
+2025-04-16 12:15:26,911 - epoch:38, training loss:1303.3550 validation loss:22.7497
+2025-04-16 12:21:59,505 - epoch:39, training loss:1309.2514 validation loss:22.6725
+2025-04-16 12:28:50,983 - epoch:40, training loss:1302.4168 validation loss:21.6796
+2025-04-16 12:35:36,785 - epoch:41, training loss:1304.6783 validation loss:23.4962
+2025-04-16 12:42:22,314 - epoch:42, training loss:1301.0575 validation loss:21.8197
+2025-04-16 12:49:01,554 - epoch:43, training loss:1314.3375 validation loss:21.1187
+2025-04-16 12:55:41,170 - epoch:44, training loss:1298.5438 validation loss:22.9776
+2025-04-16 13:02:08,627 - epoch:45, training loss:1308.1650 validation loss:22.8491
+2025-04-16 13:08:42,609 - epoch:46, training loss:1303.3703 validation loss:21.1870
+2025-04-16 13:15:10,500 - epoch:47, training loss:1307.3320 validation loss:20.5270
+2025-04-16 13:21:39,928 - epoch:48, training loss:1300.5250 validation loss:24.7915
+2025-04-16 13:28:06,058 - epoch:49, training loss:1308.5513 validation loss:21.9404
+2025-04-16 13:34:34,109 - epoch:50, training loss:1308.8951 validation loss:19.2887
+2025-04-16 13:40:58,894 - epoch:51, training loss:1303.2694 validation loss:20.0210
+2025-04-16 13:47:27,008 - epoch:52, training loss:1299.9585 validation loss:19.3999
+2025-04-16 13:53:54,420 - epoch:53, training loss:1303.3200 validation loss:19.8599
+2025-04-16 14:00:29,023 - epoch:54, training loss:1312.0744 validation loss:20.2954
+2025-04-16 14:06:57,495 - epoch:55, training loss:1300.5445 validation loss:21.0348
+2025-04-16 14:13:25,953 - epoch:56, training loss:1302.8620 validation loss:18.3910
+2025-04-16 14:19:53,169 - epoch:57, training loss:1304.4438 validation loss:19.3119
+2025-04-16 14:26:21,533 - epoch:58, training loss:1307.0078 validation loss:20.3586
+2025-04-16 14:32:48,245 - epoch:59, training loss:1303.3977 validation loss:22.2219
+2025-04-16 14:39:16,305 - epoch:60, training loss:1315.0090 validation loss:22.6762
+2025-04-16 14:45:43,329 - epoch:61, training loss:1301.4185 validation loss:19.7325
+2025-04-16 14:52:11,537 - epoch:62, training loss:1309.4330 validation loss:19.7882
+2025-04-16 14:58:40,077 - epoch:63, training loss:1303.1950 validation loss:21.9878
+2025-04-16 15:05:14,301 - epoch:64, training loss:1310.1606 validation loss:19.1471
+2025-04-16 15:11:44,155 - epoch:65, training loss:1301.7783 validation loss:19.4789
+2025-04-16 15:18:10,600 - epoch:66, training loss:1300.4433 validation loss:20.3963
+2025-04-16 15:24:36,124 - epoch:67, training loss:1305.5333 validation loss:22.7408
+2025-04-16 15:31:03,721 - epoch:68, training loss:1311.5589 validation loss:22.4640
+2025-04-16 15:37:32,140 - epoch:69, training loss:1300.5873 validation loss:23.3933
+2025-04-16 15:44:00,072 - epoch:70, training loss:1302.2715 validation loss:30.3410
+2025-04-16 15:50:30,603 - epoch:71, training loss:1306.3667 validation loss:20.2527
+2025-04-16 15:57:01,603 - epoch:72, training loss:1306.7450 validation loss:21.5840
+2025-04-16 16:03:34,261 - epoch:73, training loss:1295.2162 validation loss:22.8507
+2025-04-16 16:10:20,698 - epoch:74, training loss:1309.7602 validation loss:21.1026
+2025-04-16 16:17:03,788 - epoch:75, training loss:1301.2506 validation loss:20.0594
+2025-04-16 16:23:50,483 - epoch:76, training loss:1305.5903 validation loss:21.1991
+2025-04-16 16:30:34,499 - epoch:77, training loss:1300.9409 validation loss:20.6668
+2025-04-16 16:37:09,482 - epoch:78, training loss:1303.8596 validation loss:23.6103
+2025-04-16 16:43:43,751 - epoch:79, training loss:1303.7328 validation loss:21.0538
+2025-04-16 16:50:14,063 - epoch:80, training loss:1306.1311 validation loss:21.5344
+2025-04-16 16:56:41,803 - epoch:81, training loss:1306.3051 validation loss:19.1399
+2025-04-16 17:03:10,608 - epoch:82, training loss:1302.1419 validation loss:24.4823
+2025-04-16 17:09:38,681 - epoch:83, training loss:1306.9121 validation loss:32.0150
+2025-04-16 17:16:06,066 - epoch:84, training loss:1303.7685 validation loss:21.1365
+2025-04-16 17:22:33,710 - epoch:85, training loss:1310.9801 validation loss:21.4630
+2025-04-16 17:29:00,370 - epoch:86, training loss:1303.9000 validation loss:21.3000
+2025-04-16 17:35:27,217 - epoch:87, training loss:1303.3693 validation loss:21.9426
+2025-04-16 17:36:17,151 - [*] loss:2595.4680
+2025-04-16 17:36:17,230 - [*] year 2016, testing
+2025-04-16 17:36:18,052 - T:3	MAE	29.2473	RMSE	42.3164	MAPE	31.7000
+2025-04-16 17:36:19,673 - T:6	MAE	31.0486	RMSE	46.4602	MAPE	33.3719
+2025-04-16 17:36:24,988 - T:12	MAE	33.4154	RMSE	50.9457	MAPE	36.4481
+2025-04-16 17:36:24,989 - T:Avg	MAE	31.0400	RMSE	46.0525	MAPE	33.7109
+2025-04-16 17:36:24,990 - Finished optimization, total time:26426.29 s, best model:log/AIR/retrain_st_air-2025-04-16_09-19-57-seed46/2016/18.391.pkl
+2025-04-16 17:36:25,485 - [*] Year 2017 load from data/AIR/FastData/2017.npz
+2025-04-16 17:36:47,675 - [*] Year 2017 Dataset load!
+2025-04-16 17:36:47,833 - Total Parameters: 333024
+2025-04-16 17:36:47,833 - Trainable Parameters: 333024
+Parameter: adaptive_embedding | Shape: torch.Size([12, 1154, 20]) | Requires Grad: True
+Parameter: input_proj.weight | Shape: torch.Size([12, 1]) | Requires Grad: True
+Parameter: input_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: output_proj.weight | Shape: torch.Size([12, 384]) | Requires Grad: True
+Parameter: output_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: True
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: True
+2025-04-16 17:36:47,834 - [*] Year 2017 Training start
+2025-04-16 17:36:48,329 - node number torch.Size([4616, 12])
+2025-04-16 17:43:35,670 - epoch:0, training loss:2479.8321 validation loss:26.4363
+2025-04-16 17:50:22,250 - epoch:1, training loss:1570.6792 validation loss:26.0262
+2025-04-16 17:57:11,087 - epoch:2, training loss:1436.7196 validation loss:26.3472
+2025-04-16 18:03:57,077 - epoch:3, training loss:1382.6462 validation loss:26.4223
+2025-04-16 18:10:46,145 - epoch:4, training loss:1345.8705 validation loss:26.3487
+2025-04-16 18:17:32,345 - epoch:5, training loss:1327.8579 validation loss:27.0153
+2025-04-16 18:24:22,060 - epoch:6, training loss:1312.2158 validation loss:24.7872
+2025-04-16 18:31:08,361 - epoch:7, training loss:1303.0934 validation loss:24.1220
+2025-04-16 18:38:03,630 - epoch:8, training loss:1304.9435 validation loss:24.9561
+2025-04-16 18:44:55,888 - epoch:9, training loss:1306.2148 validation loss:27.0270
+2025-04-16 18:51:48,160 - epoch:10, training loss:1297.2813 validation loss:29.1051
+2025-04-16 18:58:36,418 - epoch:11, training loss:1303.5258 validation loss:24.8533
+2025-04-16 19:05:26,783 - epoch:12, training loss:1300.7666 validation loss:23.5620
+2025-04-16 19:12:15,624 - epoch:13, training loss:1299.3382 validation loss:26.4585
+2025-04-16 19:19:05,257 - epoch:14, training loss:1301.1988 validation loss:28.3747
+2025-04-16 19:25:54,208 - epoch:15, training loss:1301.0597 validation loss:23.5678
+2025-04-16 19:32:46,422 - epoch:16, training loss:1301.9721 validation loss:27.0016
+2025-04-16 19:39:42,523 - epoch:17, training loss:1301.4878 validation loss:24.7820
+2025-04-16 19:46:37,780 - epoch:18, training loss:1301.7336 validation loss:25.5250
+2025-04-16 19:53:31,791 - epoch:19, training loss:1302.0835 validation loss:27.0412
+2025-04-16 20:00:28,056 - epoch:20, training loss:1302.1608 validation loss:27.5604
+2025-04-16 20:07:21,664 - epoch:21, training loss:1298.3266 validation loss:28.9575
+2025-04-16 20:14:08,253 - epoch:22, training loss:1300.1502 validation loss:26.6763
+2025-04-16 20:20:57,382 - epoch:23, training loss:1298.6361 validation loss:29.4867
+2025-04-16 20:27:44,878 - epoch:24, training loss:1299.5876 validation loss:28.1041
+2025-04-16 20:34:44,652 - epoch:25, training loss:1297.7548 validation loss:24.0109
+2025-04-16 20:41:36,942 - epoch:26, training loss:1304.8489 validation loss:27.8365
+2025-04-16 20:48:26,247 - epoch:27, training loss:1295.2945 validation loss:25.3698
+2025-04-16 20:55:12,173 - epoch:28, training loss:1298.9639 validation loss:29.2288
+2025-04-16 21:02:01,620 - epoch:29, training loss:1300.3840 validation loss:27.2105
+2025-04-16 21:08:49,598 - epoch:30, training loss:1302.3567 validation loss:23.3011
+2025-04-16 21:15:41,769 - epoch:31, training loss:1296.1212 validation loss:29.0365
+2025-04-16 21:22:32,991 - epoch:32, training loss:1303.2150 validation loss:24.7837
+2025-04-16 21:29:27,057 - epoch:33, training loss:1301.0112 validation loss:24.1721
+2025-04-16 21:36:19,171 - epoch:34, training loss:1301.8648 validation loss:25.3096
+2025-04-16 21:43:14,457 - epoch:35, training loss:1303.6002 validation loss:24.4613
+2025-04-16 21:50:08,336 - epoch:36, training loss:1303.2068 validation loss:23.8082
+2025-04-16 21:57:03,320 - epoch:37, training loss:1295.7360 validation loss:28.8295
+2025-04-16 22:03:58,049 - epoch:38, training loss:1300.8742 validation loss:26.8395
+2025-04-16 22:10:52,371 - epoch:39, training loss:1299.8307 validation loss:27.4664
+2025-04-16 22:17:45,446 - epoch:40, training loss:1302.2954 validation loss:25.2683
+2025-04-16 22:24:38,569 - epoch:41, training loss:1304.2845 validation loss:24.5618
+2025-04-16 22:31:33,985 - epoch:42, training loss:1306.7359 validation loss:27.9983
+2025-04-16 22:38:26,924 - epoch:43, training loss:1294.8439 validation loss:27.3554
+2025-04-16 22:45:27,913 - epoch:44, training loss:1300.7169 validation loss:24.1038
+2025-04-16 22:52:21,779 - epoch:45, training loss:1301.1066 validation loss:24.9165
+2025-04-16 22:59:17,760 - epoch:46, training loss:1296.1947 validation loss:24.7223
+2025-04-16 23:06:07,894 - epoch:47, training loss:1301.6224 validation loss:26.2158
+2025-04-16 23:12:55,368 - epoch:48, training loss:1297.8112 validation loss:26.0001
+2025-04-16 23:19:40,570 - epoch:49, training loss:1297.5135 validation loss:25.9103
+2025-04-16 23:26:31,785 - epoch:50, training loss:1301.1940 validation loss:26.7536
+2025-04-16 23:33:22,634 - epoch:51, training loss:1302.2438 validation loss:28.4038
+2025-04-16 23:40:14,513 - epoch:52, training loss:1296.9667 validation loss:27.1577
+2025-04-16 23:47:05,508 - epoch:53, training loss:1302.5455 validation loss:23.8760
+2025-04-16 23:53:55,830 - epoch:54, training loss:1303.5160 validation loss:25.8939
+2025-04-17 00:00:47,380 - epoch:55, training loss:1302.4916 validation loss:28.0978
+2025-04-17 00:07:40,566 - epoch:56, training loss:1296.9916 validation loss:26.4226
+2025-04-17 00:14:27,254 - epoch:57, training loss:1301.2464 validation loss:27.3102
+2025-04-17 00:21:13,578 - epoch:58, training loss:1297.9292 validation loss:24.5388
+2025-04-17 00:28:02,157 - epoch:59, training loss:1301.0337 validation loss:28.5994
+2025-04-17 00:34:48,518 - epoch:60, training loss:1300.7068 validation loss:25.1264
+2025-04-17 00:41:37,623 - epoch:61, training loss:1302.8824 validation loss:24.7917
+2025-04-17 00:42:30,807 - [*] loss:1765.6614
+2025-04-17 00:42:30,963 - [*] year 2017, testing
+2025-04-17 00:42:31,893 - T:3	MAE	23.1450	RMSE	32.2211	MAPE	28.4685
+2025-04-17 00:42:34,242 - T:6	MAE	25.6932	RMSE	37.0674	MAPE	30.7367
+2025-04-17 00:42:42,572 - T:12	MAE	28.5834	RMSE	42.0198	MAPE	33.8627
+2025-04-17 00:42:42,573 - T:Avg	MAE	25.5276	RMSE	36.5139	MAPE	30.8236
+2025-04-17 00:42:42,588 - Finished optimization, total time:22635.72 s, best model:log/AIR/retrain_st_air-2025-04-16_09-19-57-seed46/2017/23.3011.pkl
+2025-04-17 00:42:42,837 - [*] Year 2018 load from data/AIR/FastData/2018.npz
+2025-04-17 00:43:04,987 - [*] Year 2018 Dataset load!
+2025-04-17 00:43:05,194 - Total Parameters: 342384
+2025-04-17 00:43:05,194 - Trainable Parameters: 342384
+Parameter: adaptive_embedding | Shape: torch.Size([12, 1193, 20]) | Requires Grad: True
+Parameter: input_proj.weight | Shape: torch.Size([12, 1]) | Requires Grad: True
+Parameter: input_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: output_proj.weight | Shape: torch.Size([12, 384]) | Requires Grad: True
+Parameter: output_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: True
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: True
+2025-04-17 00:43:05,196 - [*] Year 2018 Training start
+2025-04-17 00:43:05,762 - node number torch.Size([4772, 12])
+2025-04-17 00:50:16,374 - epoch:0, training loss:2232.7493 validation loss:25.2534
+2025-04-17 00:57:30,829 - epoch:1, training loss:1473.1168 validation loss:26.3459
+2025-04-17 01:04:44,703 - epoch:2, training loss:1345.1588 validation loss:22.2539
+2025-04-17 01:12:00,436 - epoch:3, training loss:1310.9965 validation loss:33.6511
+2025-04-17 01:19:15,957 - epoch:4, training loss:1254.6526 validation loss:26.5121
+2025-04-17 01:26:30,835 - epoch:5, training loss:1241.4799 validation loss:26.1853
+2025-04-17 01:33:46,393 - epoch:6, training loss:1230.6106 validation loss:24.5775
+2025-04-17 01:40:59,516 - epoch:7, training loss:1221.3879 validation loss:26.1381
+2025-04-17 01:48:13,898 - epoch:8, training loss:1217.3757 validation loss:27.9787
+2025-04-17 01:55:24,967 - epoch:9, training loss:1214.2654 validation loss:26.5867
+2025-04-17 02:02:39,452 - epoch:10, training loss:1211.5754 validation loss:27.8729
+2025-04-17 02:09:52,377 - epoch:11, training loss:1218.0642 validation loss:26.2599
+2025-04-17 02:17:10,211 - epoch:12, training loss:1211.4834 validation loss:26.0247
+2025-04-17 02:24:28,944 - epoch:13, training loss:1211.9647 validation loss:26.4372
+2025-04-17 02:31:44,558 - epoch:14, training loss:1214.8520 validation loss:26.3630
+2025-04-17 02:39:04,426 - epoch:15, training loss:1214.8718 validation loss:26.2131
+2025-04-17 02:46:24,645 - epoch:16, training loss:1214.7379 validation loss:25.8842
+2025-04-17 02:53:45,738 - epoch:17, training loss:1212.6339 validation loss:24.2000
+2025-04-17 03:00:58,256 - epoch:18, training loss:1215.1089 validation loss:26.8174
+2025-04-17 03:08:18,492 - epoch:19, training loss:1214.3444 validation loss:26.3947
+2025-04-17 03:15:40,319 - epoch:20, training loss:1213.0576 validation loss:25.0223
+2025-04-17 03:22:59,469 - epoch:21, training loss:1215.5720 validation loss:28.4347
+2025-04-17 03:30:15,844 - epoch:22, training loss:1216.1435 validation loss:23.7623
+2025-04-17 03:37:32,465 - epoch:23, training loss:1213.7748 validation loss:26.7406
+2025-04-17 03:44:48,756 - epoch:24, training loss:1214.0013 validation loss:25.3890
+2025-04-17 03:52:02,021 - epoch:25, training loss:1214.8345 validation loss:27.5840
+2025-04-17 03:59:17,117 - epoch:26, training loss:1213.2880 validation loss:27.4548
+2025-04-17 04:06:31,325 - epoch:27, training loss:1217.2341 validation loss:24.9399
+2025-04-17 04:13:50,154 - epoch:28, training loss:1213.8864 validation loss:24.6205
+2025-04-17 04:21:23,163 - epoch:29, training loss:1215.8304 validation loss:24.9356
+2025-04-17 04:28:58,802 - epoch:30, training loss:1212.8080 validation loss:25.4676
+2025-04-17 04:36:31,913 - epoch:31, training loss:1214.7960 validation loss:25.9644
+2025-04-17 04:44:06,343 - epoch:32, training loss:1212.6505 validation loss:25.2553
+2025-04-17 04:51:38,806 - epoch:33, training loss:1213.9674 validation loss:26.0767
+2025-04-17 04:52:35,142 - [*] loss:1402.3711
+2025-04-17 04:52:35,221 - [*] year 2018, testing
+2025-04-17 04:52:36,187 - T:3	MAE	18.2453	RMSE	30.0832	MAPE	27.2402
+2025-04-17 04:52:37,834 - T:6	MAE	20.3239	RMSE	33.5334	MAPE	31.0585
+2025-04-17 04:52:43,218 - T:12	MAE	22.7119	RMSE	37.4482	MAPE	35.6719
+2025-04-17 04:52:43,218 - T:Avg	MAE	20.1527	RMSE	33.2175	MAPE	30.8561
+2025-04-17 04:52:43,219 - Finished optimization, total time:13285.39 s, best model:log/AIR/retrain_st_air-2025-04-16_09-19-57-seed46/2018/22.2539.pkl
+2025-04-17 04:52:43,264 - [*] Year 2019 load from data/AIR/FastData/2019.npz
+2025-04-17 04:53:10,019 - [*] Year 2019 Dataset load!
+2025-04-17 04:53:10,256 - Total Parameters: 344544
+2025-04-17 04:53:10,256 - Trainable Parameters: 344544
+Parameter: adaptive_embedding | Shape: torch.Size([12, 1202, 20]) | Requires Grad: True
+Parameter: input_proj.weight | Shape: torch.Size([12, 1]) | Requires Grad: True
+Parameter: input_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: output_proj.weight | Shape: torch.Size([12, 384]) | Requires Grad: True
+Parameter: output_proj.bias | Shape: torch.Size([12]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_t.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_t.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.0.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.0.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.1.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.1.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_Q.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_K.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.FC_V.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.weight | Shape: torch.Size([32, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.attn.out_proj.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.weight | Shape: torch.Size([64, 32]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.0.bias | Shape: torch.Size([64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.weight | Shape: torch.Size([32, 64]) | Requires Grad: True
+Parameter: attn_layers_s.2.feed_forward.2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln1.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.weight | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: attn_layers_s.2.ln2.bias | Shape: torch.Size([32]) | Requires Grad: True
+Parameter: fc.weight | Shape: torch.Size([12, 12]) | Requires Grad: True
+Parameter: fc.bias | Shape: torch.Size([12]) | Requires Grad: True
+2025-04-17 04:53:10,257 - [*] Year 2019 Training start
+2025-04-17 04:53:10,793 - node number torch.Size([4808, 12])
+2025-04-17 05:00:35,322 - epoch:0, training loss:5059.8111 validation loss:24.7981
+2025-04-17 05:08:02,772 - epoch:1, training loss:3399.7731 validation loss:19.4402
+2025-04-17 05:15:29,450 - epoch:2, training loss:2861.5792 validation loss:19.2181
+2025-04-17 05:22:56,632 - epoch:3, training loss:2662.7660 validation loss:19.8721
+2025-04-17 05:30:23,485 - epoch:4, training loss:2578.5830 validation loss:20.4861
+2025-04-17 05:37:49,969 - epoch:5, training loss:2541.4714 validation loss:20.9993
+2025-04-17 05:45:17,526 - epoch:6, training loss:2522.3751 validation loss:21.3073
+2025-04-17 05:52:42,987 - epoch:7, training loss:2512.0348 validation loss:21.3575
+2025-04-17 06:00:09,779 - epoch:8, training loss:2509.4178 validation loss:21.6973
+2025-04-17 06:07:34,518 - epoch:9, training loss:2507.1282 validation loss:21.5905
+2025-04-17 06:14:57,289 - epoch:10, training loss:2506.4018 validation loss:21.5495
+2025-04-17 06:21:58,505 - epoch:11, training loss:2506.5470 validation loss:21.3803
+2025-04-17 06:29:02,286 - epoch:12, training loss:2507.5173 validation loss:21.4526
+2025-04-17 06:36:05,146 - epoch:13, training loss:2506.7482 validation loss:21.5306
+2025-04-17 06:43:08,508 - epoch:14, training loss:2508.4426 validation loss:21.6103
+2025-04-17 06:49:56,275 - epoch:15, training loss:2507.2065 validation loss:21.5841
+2025-04-17 06:56:38,245 - epoch:16, training loss:2505.4358 validation loss:21.4904
+2025-04-17 07:03:21,065 - epoch:17, training loss:2507.8776 validation loss:21.4527
+2025-04-17 07:10:01,811 - epoch:18, training loss:2507.0921 validation loss:21.4352
+2025-04-17 07:16:45,799 - epoch:19, training loss:2509.8361 validation loss:21.4885
+2025-04-17 07:23:31,572 - epoch:20, training loss:2507.1432 validation loss:21.3732
+2025-04-17 07:30:14,828 - epoch:21, training loss:2507.3244 validation loss:21.4669
+2025-04-17 07:36:54,823 - epoch:22, training loss:2508.6819 validation loss:21.5779
+2025-04-17 07:43:43,730 - epoch:23, training loss:2506.7157 validation loss:21.3646
+2025-04-17 07:50:27,821 - epoch:24, training loss:2509.3460 validation loss:21.5268
+2025-04-17 07:57:10,304 - epoch:25, training loss:2509.1063 validation loss:21.5789
+2025-04-17 08:03:52,782 - epoch:26, training loss:2508.0056 validation loss:21.5119
+2025-04-17 08:10:34,560 - epoch:27, training loss:2507.8467 validation loss:21.6526
+2025-04-17 08:17:17,180 - epoch:28, training loss:2507.3372 validation loss:21.6180
+2025-04-17 08:23:57,434 - epoch:29, training loss:2508.3550 validation loss:21.4694
+2025-04-17 08:30:39,894 - epoch:30, training loss:2508.7192 validation loss:21.4697
+2025-04-17 08:37:21,087 - epoch:31, training loss:2510.0707 validation loss:21.3880
+2025-04-17 08:44:07,127 - epoch:32, training loss:2510.9510 validation loss:21.4502
+2025-04-17 08:50:47,570 - epoch:33, training loss:2511.4363 validation loss:21.4907
+2025-04-17 08:51:39,693 - [*] loss:3065.9224
+2025-04-17 08:51:39,784 - [*] year 2019, testing
+2025-04-17 08:51:40,545 - T:3	MAE	36.0032	RMSE	55.3925	MAPE	47.5521
+2025-04-17 08:51:42,283 - T:6	MAE	36.0043	RMSE	55.3965	MAPE	47.5463
+2025-04-17 08:51:47,787 - T:12	MAE	35.9864	RMSE	55.3822	MAPE	47.5360
+2025-04-17 08:51:47,788 - T:Avg	MAE	35.9996	RMSE	55.3918	MAPE	47.5457
+2025-04-17 08:51:47,789 - Finished optimization, total time:12676.31 s, best model:log/AIR/retrain_st_air-2025-04-16_09-19-57-seed46/2019/19.2181.pkl
+2025-04-17 08:51:47,801 - 
+
+
+2025-04-17 08:51:47,801 - 3   	 MAE	     29.25	     23.14	     18.25	     36.00		   26.66
+2025-04-17 08:51:47,802 - 3   	RMSE	     42.32	     32.22	     30.08	     55.39		   40.00
+2025-04-17 08:51:47,802 - 3   	MAPE	     31.70	     28.47	     27.24	     47.55		   33.74
+2025-04-17 08:51:47,802 - 6   	 MAE	     31.05	     25.69	     20.32	     36.00		   28.27
+2025-04-17 08:51:47,802 - 6   	RMSE	     46.46	     37.07	     33.53	     55.40		   43.11
+2025-04-17 08:51:47,802 - 6   	MAPE	     33.37	     30.74	     31.06	     47.55		   35.68
+2025-04-17 08:51:47,802 - 12  	 MAE	     33.42	     28.58	     22.71	     35.99		   30.17
+2025-04-17 08:51:47,802 - 12  	RMSE	     50.95	     42.02	     37.45	     55.38		   46.45
+2025-04-17 08:51:47,802 - 12  	MAPE	     36.45	     33.86	     35.67	     47.54		   38.38
+2025-04-17 08:51:47,802 - Avg 	 MAE	     31.04	     25.53	     20.15	     36.00		   28.18
+2025-04-17 08:51:47,802 - Avg 	RMSE	     46.05	     36.51	     33.22	     55.39		   42.79
+2025-04-17 08:51:47,802 - Avg 	MAPE	     33.71	     30.82	     30.86	     47.55		   35.73
+2025-04-17 08:51:47,803 - year	2016	total_time	26426.2898	average_time	  300.2988	epoch	88
+2025-04-17 08:51:47,803 - year	2017	total_time	22635.7239	average_time	  365.0924	epoch	62
+2025-04-17 08:51:47,803 - year	2018	total_time	13285.3899	average_time	  390.7468	epoch	34
+2025-04-17 08:51:47,803 - year	2019	total_time	12676.3118	average_time	  372.8327	epoch	34
+2025-04-17 08:51:47,803 - total time: 75023.7154
