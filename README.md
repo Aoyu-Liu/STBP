@@ -32,10 +32,12 @@ nohup python main.py --conf conf/STBP_AIR.json --gpuid 0 --seed 43 > STBP_AIR.lo
 
 # 🎯 Experiment
 In prior work, the evaluation metrics were computed in a non-standard way, i.e., by averaging the results. Notably, this choice has little impact on our experimental conclusions, since all compared baselines follow the same practice. To align with the conventional metric computation protocol in spatiotemporal forecasting, we will report results computed in the standard way in the camera-ready version, while keeping the previous results here for reference. Please refer to `STBP/utils/metric.py` for details.
+
 ## Results
 <p align="center">
   <img src="fig/results1_CRC.png" width="100%">
 </p>
+
 ## Previous results
 <p align="center">
   <img src="fig/results2_CRC.png" width="100%">
