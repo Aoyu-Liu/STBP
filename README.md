@@ -1,8 +1,8 @@
 <div align="center">
   <h2><b> ✨ A General Spatio-Temporal Backbone with Scalable Contextual Pattern Bank for Urban Continual Forecasting</b></h2>
-  <img src="figs/STBP.png"  width="100%">
+  <img src="figs/STBP_CRC.png"  width="100%">
 </div>
-With the explosive growth of spatio-temporal data driven by IoT deployments and urban infrastructure expansion, accurate and efficient continual forecasting remains a critical challenge. Recent Spatio-Temporal Graph Neural Networks assume static graph topologies and temporal scales, making them ill-suited for dynamic real-world data streams. Meanwhile, existing continual learning methods often adopt simple backbones, limiting their ability to capture evolving dependencies and adapt to distributional drift. To address these limitations, we propose STBP, a novel framework for Continual Spatio-Temporal Forecasting that bridges the gap between STGNNs and continual learning. STBP integrates a general-purpose spatio-temporal backbone with a scalable contextual pattern bank. The backbone extracts stable spatio-temporal representations in the frequency domain and models dynamic spatial correlations using linear graph attention. To support continual adaptation and alleviate catastrophic forgetting, the contextual pattern bank is incrementally updated via parameter expansion, capturing evolving node-level heterogeneous patterns. During incremental training, the backbone remains frozen to preserve general knowledge, while the contextual pattern bank adapts to new scenarios and distributions. Extensive experiments show that STBP surpasses state-of-the-art baselines in both accuracy and scalability, underscoring its effectiveness for continual spatio-temporal forecasting.
+With the rapid growth of spatio-temporal data fueled by IoT deployments and urban infrastructure expansion, accurate and efficient continual forecasting has become a critical challenge. Most existing Spatio-Temporal Graph Neural Networks rely on static graph structures and offline training, rendering them inadequate for real-world streaming scenarios characterized by node expansion and distribution shifts. Although Continual Spatio-Temporal Forecasting methods have been proposed to tackle these issues, they often adopt backbones with limited modeling capacity and lack effective mechanisms to balance stability and adaptability. To overcome these limitations, we propose \texttt{STBP}, a novel framework that integrates a general spatio-temporal backbone with a scalable contextual pattern bank. The backbone extracts stable representations in the frequency domain and captures dynamic spatial correlations through lightweight linear graph attention. To support continual adaptation and mitigate catastrophic forgetting, the contextual pattern bank is updated incrementally via parameter expansion, enabling the capture of evolving node-level heterogeneity and relevance. During incremental training, the backbone remains fixed to preserve general knowledge, while the pattern bank adapts to new scenarios and distributions. Extensive experiments demonstrate that STBP outperforms state-of-the-art baselines in both forecasting accuracy and scalability, validating its effectiveness for continual spatio-temporal forecasting.
 
 # 📊 Datasets
 PEMS-Stream and AIR-Stream can be accessed through the open-source [links](https://github.com/Onedean/EAC) of previous work, while CA-Stream will be made open-source after acceptance. We extend our sincere gratitude to the authors of the referenced datasets.
@@ -30,9 +30,15 @@ nohup python main.py --conf conf/STBP_CA.json --gpuid 0 --seed 43 > STBP_CA.log 
 nohup python main.py --conf conf/STBP_AIR.json --gpuid 0 --seed 43 > STBP_AIR.log &
 ```
 
-# 🎯 Results
+# 🎯 Experiment
+In prior work, the evaluation metrics were computed in a non-standard way, i.e., by averaging the results. Notably, this choice has little impact on our experimental conclusions, since all compared baselines follow the same practice. To align with the conventional metric computation protocol in spatiotemporal forecasting, we will report results computed in the standard way in the camera-ready version, while keeping the previous results here for reference. Please refer to `STBP/utils/metric.py` for details.
+## Results
 <p align="center">
-  <img src="figs/r1.png" width="100%">
+  <img src="figs/results1_CRC.png" width="100%">
+</p>
+## Previous results
+<p align="center">
+  <img src="figs/results2_CRC.png" width="100%">
 </p>
 
 # 🔗 Acknowledgement
