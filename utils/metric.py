@@ -56,6 +56,11 @@ def masked_mae_np(y_true, y_pred, null_val=np.nan):
     mae = np.abs(y_true - y_pred)
     return np.mean(np.nan_to_num(mask * mae))
 
+def masked_rmse_np(y_true, y_pred, null_val=np.nan):
+    """Masked Root Mean Squared Error."""
+    mse = masked_mse_np(y_true, y_pred, null_val)
+    return np.sqrt(mse)
+    
 # 前人工作计算方式有些问题，是前3、前6、前12时间步的平均，而非第3、第6、第12，最终Avg指标也是有问题的
 # def cal_metric(ground_truth, prediction, args):
 #     args.logger.info("[*] year {}, testing".format(args.year))
